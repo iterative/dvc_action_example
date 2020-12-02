@@ -5,7 +5,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-      - uses: iterative/setup-dvc@1
+      - uses: iterative/setup-dvc@v1
       - name: "Get my data"
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
