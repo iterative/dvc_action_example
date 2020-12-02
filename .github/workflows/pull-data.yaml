@@ -15,11 +15,11 @@ jobs:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
           # Pull the dataset from cloud storage
-          dvc pull data/data.xml
+          dvc pull --run-cache
           
           # Reproduce your pipeline
           pip install -r src/requirements.txt
           dvc repro
           
           # Push the resulting model to cloud storage
-          dvc push model.pkl
+          dvc push --run-cache
