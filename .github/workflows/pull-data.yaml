@@ -1,0 +1,15 @@
+name: train-test
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dvc@1
+      - name: "Get my data"
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          dvc pull 
+          echo "I got your data here!"
+          ls
