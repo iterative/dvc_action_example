@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: iterative/setup-dvc@v1
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.6' 
       - name: "Get my data"
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
