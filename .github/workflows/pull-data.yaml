@@ -15,7 +15,7 @@ jobs:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
           # Pull the dataset from cloud storage
-          dvc pull --run-cache
+          dvc pull
           
           # Reproduce your pipeline
           pip install -r src/requirements.txt
